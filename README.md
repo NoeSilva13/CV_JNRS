@@ -1,28 +1,32 @@
-# autoCV
+# CV — Javier Noé Ramos Silva
 
-A clean CV template in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version when new changes are pushed to the repo
+LaTeX CV. Each push to `main` compiles the PDF and publishes it at a link that does not change.
 
-## Template Design
+## Links
 
-The template is designed to be clean with sections for
-- Tabular sections for Work Experience, Education and Projects
-- Support for including a list of publications read from a `*.bib` file
-- Header with Font Awesome icons
+- Page: https://noesilva13.github.io/CV_JNRS/
+- PDF: https://noesilva13.github.io/CV_JNRS/CV_JNRS.pdf
 
-## Quickstart
-- Fork this repo (you can use the `Use this template` button)
-- Modify the `cv.tex` file and push changes to your repo
-- The complied PDF will be available under the `build` branch
+The page redirects to the PDF. The link-preview title and description (LinkedIn, Slack, messages) come from `index.html`. The direct PDF link opens the file only.
 
-Optionally, while forking this repo, you can get a direct link to the generated PDF which you can use on your website, LinkedIn etc. that will always point to the latest version of your CV. For this, after editing your copy of `cv.tex` and pushing changes to your repo, under Settings -> Pages set your Github Pages source to the `build` directory
+## Update the CV
 
-![](https://i.imgur.com/lwATw1o.png)
+1. Edit `CV_JNRS.tex`. Publications live in `citations.bib`.
+2. Push to `main`.
 
-Now, once your site is published, your CV will be accessible at: https://username.github.io/autoCV/cv.pdf
+The action in `.github/workflows/build.yml` compiles the LaTeX and publishes `CV_JNRS.pdf` and `index.html` on the `build` branch. A few minutes later, the same links serve the new version.
 
-## Detailed Instructions..
+The local `build/` folder is LaTeX Workshop output on your machine. Git ignores it. GitHub generates the public PDF, not that local file.
 
-[.. are available here](https://github.com/jitinnair1/autoCV/wiki/How-to-use-autoCV:-Detailed-Instructions)
+## Publishing
 
-## Issues
-Please start a new discussion or issue if you encounter problems
+One-time repository setup:
+
+1. **Settings → Actions → General → Workflow permissions:** Read and write permissions. The action needs to write the `build` branch.
+2. **Settings → Pages:** Deploy from a branch, branch `build`, folder `/ (root)`. The branch appears after the first successful workflow run.
+
+The repository must be public for GitHub Pages to serve the site.
+
+## Origin
+
+The layout comes from [autoCV](https://github.com/jitinnair1/autoCV) by Jitin Nair.
