@@ -39,7 +39,10 @@ jobs:
         with:
           path: github_artifacts
       - name: Prepare deploy folder
-        run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
+        run: |
+          mkdir -p github_deploy
+          mv github_artifacts/*/* github_deploy
+          cp index.html github_deploy/
       - name: Publish to build branch
         uses: peaceiris/actions-gh-pages@v4
         with:
