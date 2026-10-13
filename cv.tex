@@ -1,0 +1,341 @@
+\documentclass[letter,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ydnt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Javier Noe Ramos Silva} \\[7.5pt]
+\href{https://www.linkedin.com/in/noe-silva-4b9469a4/}{\raisebox{-0.05\height}\faLinkedin\ Noé Silva} \ $|$ \ 
+\href{https://www.researchgate.net/profile/Javier-Ramos-Silva}{\raisebox{-0.05\height}\faGlobe \ Researchgate} \ $|$ \ 
+\href{https://github.com/NoeSilva13}{\raisebox{-0.05\height}\faGithub\ NoeSilva13} \ $|$ \ 
+\href{mailto:noeramossilva13@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ noeramossilva13@gmail.com} \ $|$ \ 
+\href{tel:+529515692969}{\raisebox{-0.05\height}\faMobile \ +1 9492839996/+52 9515692969} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Resume}
+Doctoral Researcher at UC Irvine specializing in quantum sensing and RF/MW engineering, with 7+ years leading large-scale radiocommunication projects for Mexican federal and military agencies. Track record managing teams in radar system development, mission-critical P25 networks, and microwave infrastructure design. M.Sc. in Telecommunications (IPN, Cum Laude) with publications in high-impact journals and international research collaboration (UAB, Spain).
+
+%Experience
+\section{Experience}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Graduate Student Researcher} & \hfill September 2024 - Present \\[3.75pt]
+\textbf{University of California, Irvine} & \hfill Irvine, USA \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--]Conducting doctoral research in quantum sensing and RF/MW engineering under Prof. Peter Burke, focusing on nitrogen-vacancy (NV) center-based biosensing applications.
+        \item[--]Teaching Assistant for EECS 170B (Electronics II) and EECS 195A (Drones), 150+ undergraduate students.
+        \item[--]Developing experimental protocols for single NV center detection and characterization using confocal microscopy, microwave control systems, and automated data acquisition/processing.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Radar System Development Coordinator} & \hfill January 2024 - September 2024 \\[3.75pt]
+\textbf{Secretaría de la Defensa Nacional (SEDENA)} & \hfill Mexico City \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--]Technical Lead of a 7+ engineer antenna engineering team for the “Research and Development of a 3D Air Surveillance Radar System TPS-CAMAZOT-220”, overseeing antenna design, RF validation, and system-level performance characterization developed for national military airspace surveillance operations.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Engineering Manager (Microwave, Optical Fiber and Data Analysis)} & \hfill July 2023 - April 2024 \\[3.75pt]
+\textbf{Gobierno del Estado de Sonora} & \hfill Mexico City \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--]Led engineering team (5+ members) in designing state-level telecommunications trunk network, coordinating fiber optic backbone, microwave link planning, and infrastructure analysis for the “Design of the Trunk Network of the State of Sonora" project.
+        \item[--] Conducted comprehensive diagnostics of Sonora's telecommunications infrastructure, analyzing network coverage, capacity constraints, and modernization requirements.
+        \item[--] Developed data collection and analysis tools with interactive web-based mapping platform (JavaScript, HTML5, CSS3, QGIS) for infrastructure visualization and project reporting.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Microwave Network Design Specialist Consultant} & \hfill October 2022 - July 2023 \\[3.75pt]
+\textbf{Corredor Interoceánico del Istmo de Tehuantepec (CIIT)} & \hfill Mexico City \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Designed microwave backbone network for interoceanic corridor, analyzing service requirements and developing technical/economic proposals integrating PtP/PMP microwave links and fiber optic segments.
+        \item[--] Conducted network planning and coverage analysis using MLinkPlanner and QGIS, sizing microwave links across the corridor spanning Pacific to Atlantic coasts.
+        \item[--] Evaluated market solutions for network implementation and delivered technical documentation, executive presentations, and web-based project tracking tools.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{RF/MW R\&D Engineer/Scientist} & \hfill October 2020 - February 2022 \\[3.75pt]
+\textbf{SEMAR UNINDETEC/INIDETAM} & \hfill Veracruz\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+
+        \item[--]Led RF/MW engineering for “Development of Mexican Radiocommunications P25 (Vírgula Project)” (FORDECYT-funded), designing and implementing mission-critical P25 radiocommunication systems for Mexican Navy operations.
+        \item[--] Designed, simulated, and characterized RF circuits including power amplifiers, LNAs, mixers, filters, and transceivers using ADS Keysight, performing system-level integration and board level validation.
+        \item[--] Developed firmware (C, VHDL) for microcontroller and FPGA-based systems with SPI interfaces, conducting laboratory characterization using VNA, spectrum analyzers, and RF test equipment.
+        \item[--] Trained military and civilian personnel in RF engineering, digital/analog electronics, and antenna systems.
+    \end{itemize}
+    \end{minipage}
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{MW Customer Support Engineer} & \hfill March 2020 - October 2020 \\[3.75pt]
+\textbf{Huawei Technologies de México} & \hfill Querétaro \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--]Provided technical support for Huawei microwave transmission systems, analyzing incidents and troubleshooting performance issues for telecommunications carrier clients.
+        \item[--] Conducted link performance analysis and optimization, interfacing with field engineers and network operations teams.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Mission Critical Radio Specialist Consultant} & \hfill January 2018 - August 2018 \\[3.75pt]
+\textbf{Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública} & \hfill Mexico City \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--]Developed “Prospective Study on the National Radiocommunication Network" defining strategic modernization plan for Mexico's public safety communications infrastructure, analyzing system architecture, migration scenarios, and short/medium/long-term roadmap.
+        \item[--] Completed intensive vendor training in mission-critical radio technologies (P25, Tetrapol, TETRA, LTE) from Motorola, Airbus, and Huawei, informing technical evaluation and strategic recommendations for network upgrade.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Antenna Design and Calibration Engineer} & \hfill June 2017 - July 2018 \\[3.75pt]
+\textbf{Laboratorio Nacional en Telecomunicaciones y Antenas (LaNTA-IPN)} & \hfill Mexico City\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+         \item[--]Designed and characterized antennas using EM simulation tools (ADS, CST, Altair Feko) and laboratory equipment (VNA, anechoic chamber, spectrum analyzers), conducting electromagnetic propagation analysis and field measurements.
+        \item[--] Developed measurement methodologies for technical validation and supported laboratory accreditation procedures for EMA, ISO 9001:2015 and ISO/IEC 17025:2005.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2024 - 2028 & Ph.D. in Electrical and Computer Engineering \\ & \textbf{University of California, Irvine} \hfill Irvine, USA \\
+
+2018 - 2020 & Master of Science in Telecommunications Engineering (Cum Laude) \\ & \textbf{Instituto Politécnico Nacional} \hfill Mexico City \\
+
+2019 - 2020 & Research Stay (Fully funded) \\ & \textbf{Universitat Autònoma de Barcelona} \hfill Barcelona, Spain\\
+
+2014 - 2017 & Bachelor of Communications and Electronics Engineering \\ & \textbf{Instituto Politécnico Nacional} \hfill Mexico City \\
+
+
+\end{tabularx}
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Investigación y Desarrollo de un Sistema de Radar de Vigilancia Aérea 3D TPS-CAMAZOT-220}& \hfill \href{https://www.infodefensa.com/texto-diario/mostrar/4537048/sistema-radar-vigilancia-aerea-3d-220-km-tps-camazot-220-desarrollo-mexicano}{Link}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Design and implementation of a radar system for the Mexican Army.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Diseño de la Red Troncal del Estado de Sonora}& \hfill \href{https://oficialiamayor.sonora.gob.mx/servicios-e-informacion/diseno-de-la-red-troncal-del-estado-de-sonora.html}{Link}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Design of the trunked network of Sonora, México.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Corredor Interoceánico de Telecomunicaciones y Servicios Digitales}& \hfill \href{https://www.ipn.mx/imageninstitucional/comunicados/ver-comunicado.html?y=2023\&n=1}{Link}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Development of the telecommunications and digital services platform of the Corredor Interoceánico del Istmo de Tehuantepec (CIIT).}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Desarrollo de Radiocomunicaciones Mexicanas P25 (Proyecto Vírgula)}& \hfill \href{https://www.youtube.com/watch?v=fkjy8IcuUEE}{Link}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Design and implementation of mission-critical P25 radio communication systems for the Mexican Navy.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Estudio prospectivo sobre la Red Nacional de Radiocomunicación} & \hfill \href{https://www.gob.mx/sesnsp/articulos/estudio-prospectivo-sobre-la-red-nacional-de-radiocomunicacion-183638?idiom=es}{Link} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Prospective study on the National Radiocommunication Network, which contemplates the short, medium and long-term strategic plan, which aims to guarantee the operation, maintenance and updating of the network, in accordance with the existing technology in the market, in compliance with the agreement 10/XLII/17 of the National Public Security Council.}  \\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages &  Spanish (Native), English (Advanced - TOEFL iBT 97, CEFR C1).\\
+RF/MW & ADS, CST, Feko, MLinkPlanner, VNA, Spectrum Analyzer, RF Generator, Anechoic Chamber, PIM. \\
+Programming  & C, C++, Python, MATLAB, VHDL, Verilog-A, JavaScript, HTML5, CSS3, NodeJS, MySQL, MongoDB.\\  
+Cloud \& Tools & Google Cloud Platform (Certified Associate Engineer), LaTeX, Linux, QGIS.
+\end{tabularx}
+
+\section{Awards \& Honors}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Fellowship & Henry Samueli Endowed Fellowship (2026) \\
+Fellowship & UCI Electrical Engineering and Computer Science Department (2024-2025) \\
+Scholarship & Mexico’s National Council of Science and Technology M.Sc. (2018-2020). \\
+Scholarship & Mexico’s National Council of Science and Technology International Ph.D. (2023-2027), declined. \\
+Grant & International Academic Mobility Grant (IPN, 2019)\\
+Grant & Institutional Research Training Program (PIFI) (2015-2018). \\
+Honorable mention&Fourth science and technology contest "Vive conCiencia 2017" (National Finalist)
+\end{tabularx}
+
+\section{Peer Review}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Peer Reviewer & Springer Nature (\href{https://link.springer.com/journal/42452}{Discover Applied Sciences}), IOP Publishing (\href{https://iopscience.iop.org/journal/1361-6528}{Nanotechnology}, \href{https://iopscience.iop.org/journal/1402-4896}{Physica Scripta}, \href{https://iopscience.iop.org/journal/2631-8695}{Engineering Research Express}, \href{https://iopscience.iop.org/journal/0268-1242}{Semiconductor Science and Technology}), AEU (\href{https://www.sciencedirect.com/journal/aeu-international-journal-of-electronics-and-communications}{International Journal of Electronics and Communications}).
+\end{tabularx}
+
+\section{Certificates}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Google & \href{https://www.credly.com/badges/a4cdb365-cfea-4db6-8d95-9f6d1f68c9ca/linked_in_profile}{Associate Cloud Engineer Certification
+}\\
+Google & \href{https://www.credly.com/go/FHkiolee}{Google Data Analytics Professional Certificate
+}\\
+Huawei & \href{}{HCCDA-Tech Essentials (Huawei Cloud) ID: HWDCTEDA402783}\\
+IOP Publishing  & \href{https://accreditations.ioppublishing.org/765801b1-b885-4afd-89ec-aade957ed829}{2023 Online Peer Review Excellence Graduates} \\
+Udemy & \href{https://www.udemy.com/certificate/UC-a5029241-69d1-4048-b625-9799ae9f94bc/}{100 Days Of Code - 2023 Web Development Bootcamp}\\
+Mentor Collective & \href{https://learning.mentorcollective.org/certificates/3lybn4oz10}{Student Success Mentor Training}\\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/6062217}{Google Cloud Computing Foundations: Data, ML, and AI in Google Cloud} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/5954041}{Google Cloud Computing Foundations: Infrastructure in Google Cloud} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/6005756}{Google Cloud Computing Foundations: Networking \& Security in Google Cloud} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/5759563}{Google Cloud Computing Foundations: Cloud Computing Fundamentals} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/6074461}{Perform Foundational Data, ML, and AI Tasks in Google Cloud} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/5997863}{Perform Foundational Infrastructure Tasks in Google Cloud} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/5779482}{Create and Manage Cloud Resources} \\
+% Google & \href{https://www.cloudskillsboost.google/public_profiles/611c2c32-db86-427e-8e56-5ecd5262e84c/badges/6076036}{Build and Secure Networks in Google Cloud} \\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	TEACHING
+%----------------------------------------------------------------------------------------
+\section{Teaching}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+EECS 170B Electronics II (LAB)& TA UC Irvine\\
+EECS 195A Drones (LAB)& TA UC Irvine\\
+Electromagnetic Radiator Theory & TA ESIME ZAC\\
+Microwave Circuits & TA ESIME ZAC\\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	EXTRACURRICULAR
+%----------------------------------------------------------------------------------------
+\section{Extracurricular}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Housing Assitant & GFH (Graduate \& Family Housing) (UCI) (2025-Present)\\
+Member/Treasurer & MGREP (Mexico Graduate Research \& Education Program) (UCI) (2023-Present) \\
+Volunteer Teacher & Use of LaTeX for Scientific Writing, Engineering and Programming (2016-2020) \\
+Volunteer & Nursing Home for the Elderly "Los Tamayo" (Oaxaca) (2016-2018)\\
+Athlete & Competitive Team Athletics (10 km/ Half-Marathon) \& Triathlon at IPN (2013-2016)\\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+\vfill
+\center{\footnotesize Last Update: \today}
+
+\end{document}
